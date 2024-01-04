@@ -11,4 +11,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './view-transition.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ViewTransitionComponent { }
+export default class ViewTransitionComponent { }

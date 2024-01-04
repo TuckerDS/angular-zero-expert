@@ -11,4 +11,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './defer-options.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DeferOptionsComponent { }
+export default class DeferOptionsComponent { }
