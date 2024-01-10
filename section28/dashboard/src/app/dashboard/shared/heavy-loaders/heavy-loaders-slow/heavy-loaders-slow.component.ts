@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-heavy-loaders-slow',
@@ -11,4 +11,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './heavy-loaders-slow.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeavyLoadersSlowComponent { }
+export class HeavyLoadersSlowComponent {
+  @Input({ required: true }) cssClass!: string
+
+  constructor() {
+    const start = Date.now();
+    while (Date.now() - start < 3000) { };
+    console.log('Loaded Heavy');
+
+  }
+}

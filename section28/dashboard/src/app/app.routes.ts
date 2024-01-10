@@ -26,7 +26,7 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component'),
       },
       {
-        path: 'user/:id',
+        path: 'users/:id',
         title: 'User View',
         loadComponent: () => import('./dashboard/pages/user/user.component'),
       },
@@ -38,7 +38,17 @@ export const routes: Routes = [
       {
         path: 'view-transition',
         title: 'View Transition',
-        loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component'),
+        loadComponent: () => import('./dashboard/pages/view-transition1/view-transition1.component'),
+      },
+      {
+        path: 'view-transition2',
+        title: 'View Transition2',
+        loadComponent: () => import('./dashboard/pages/view-transition2/view-transition2.component'),
+      },
+      {
+        path: '',
+        redirectTo: 'control-flow',
+        pathMatch: 'full'
       }
     ]
   },
