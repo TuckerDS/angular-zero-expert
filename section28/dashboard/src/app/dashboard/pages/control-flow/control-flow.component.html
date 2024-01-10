@@ -1,1 +1,51 @@
-<p>control-flow works!</p>,
+<app-title title="Control Flow" withShadow />
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
+    <button class="p-2 bg-blue-500 rounded" (click)="toggleContent()">Change</button>
+
+    @if (showContent()) {
+    Hola mundo
+    } @else {
+    *****
+    }
+  </div>
+  <div class="bg-gray-300 rounded shadow p-10">
+    {{grade()}}
+
+    @switch (grade()) {
+    @case ('A') {
+    <p>Arriba de 90%</p>
+    } @case ('B'){
+    <p>Arriba de 50%</p>
+    } @default {
+    <p>Debajo de de 50%</p>
+    }
+    }
+  </div>
+
+  <div class="bg-gray-300 rounded shadow p-10">
+    {{frameworks()}}
+    <ul>
+      @for (item of frameworks(); track item;
+      let i = $index, even = $even, odd = $odd, count = $count ) {
+      <li class="{
+        'bg-gray-800': event,
+        'bg-gray-300': odd,
+      }">{{i + 1 }}/{{count}} - {{item}}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+    {{frameworks2()}}
+    <ul>
+      @for (item of frameworks2(); track $index) {
+      <li>{{item}}</li>
+      } @empty {
+      'Empty Frameworks'
+      }
+    </ul>
+  </div>
+</section>
