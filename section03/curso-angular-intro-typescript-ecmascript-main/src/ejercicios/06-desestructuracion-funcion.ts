@@ -7,23 +7,23 @@ export interface Producto {
     precio: number;
 }
 
-const telefono: Producto = {
+export const telefono: Producto = {
     desc: 'Nokia A1',
     precio: 150
 }
 
-const tableta: Producto = {
+export const tableta: Producto = {
     desc: 'iPad Air',
     precio: 350
 }
 
 
 
-export function calculaISV( productos: Producto[] ):[number, number] {
+export function calculaISV(productos: Producto[]): [number, number] {
 
     let total = 0;
 
-    productos.forEach(  ({ precio }) => {
+    productos.forEach(({ precio }) => {
         total += precio;
     })
 
