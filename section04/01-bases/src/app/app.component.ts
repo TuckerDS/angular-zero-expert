@@ -10,5 +10,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'bases';
+  public title: string = 'Contador App';
+  public count: number = 0;
+
+  add() {
+    this.count++;
+  }
+
+  minus() {
+    this.count--;
+  }
 }
