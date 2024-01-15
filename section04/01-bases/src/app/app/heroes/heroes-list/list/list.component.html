@@ -1,0 +1,12 @@
+<h1>Listado</h1>
+<div *ngIf="deletedHero; else noDeleted">
+  <h3>Deleted hero: <small>{{deletedHero}}</small></h3>
+</div>
+<ng-template #noDeleted>
+  <h3>No ha borrado nada</h3>
+</ng-template>
+
+<button (click)="deletedHero = heroes.pop()">Remove hero</button>
+<ul>
+  <li *ngFor="let hero of heroes; let i = index">{{i+1}}. {{hero}}</li>
+</ul>

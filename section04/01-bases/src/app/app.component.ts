@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CounterModule } from './app/counter/counter.module';
-import { HeroeModule } from './app/heroes/heroe/heroe.module';
+import { HeroesModule } from './app/heroes/heroes.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, CounterStandAloneComponent, CounterModule, HeroeModule],
+  imports: [CommonModule, RouterOutlet, CounterStandAloneComponent, CounterModule, HeroesModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

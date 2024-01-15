@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
-  styleUrl: './heroe.component.css',
+  selector: 'app-hero',
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.css',
 })
-export class HeroeComponent {
+export class HeroComponent {
   public name: string = 'Ironman';
   public age: number = 35;
 
