@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { CountryModule } from './country/country.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     CommonModule,
     RouterOutlet,
+    RouterModule,
     CountryModule,
     SharedModule
   ],

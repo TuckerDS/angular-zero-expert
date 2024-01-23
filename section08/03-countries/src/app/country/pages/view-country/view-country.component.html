@@ -1,1 +1,15 @@
-<p>view-country works!</p>
+<div *ngIf="!country; else divCountry" class="alert alert-info">
+  Wait please...
+</div>
+
+
+<ng-template #divCountry>
+  <div>
+    <div class="row">
+      <div class="col-12">
+        <h1>Pais: <small>{{country.name.common}}</small></h1>
+
+      </div>
+    </div>
+  </div>
+</ng-template>

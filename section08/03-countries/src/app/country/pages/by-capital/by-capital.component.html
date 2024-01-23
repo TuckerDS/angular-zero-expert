@@ -1,1 +1,16 @@
-<p>by-capital works!</p>
+<h2>By capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <app-country-input (onEnter)="search($event)" (onDebounce)="suggests($event)"
+      placeholder="Search capital"></app-country-input>
+  </div>
+</div>
+
+<hr>
+<div *ngIf="hasError" class="alert alert-danger">
+  Don't found results for {{term}}
+</div>
+
+<app-country-table [countries]="countries"></app-country-table>
