@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { SharedModule } from './shared/shared.module';
 
+// Locale conf
+
 @Component({
   selector: 'app-root',
   standalone: true,
