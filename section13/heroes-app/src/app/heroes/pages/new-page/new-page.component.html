@@ -1,1 +1,55 @@
-<p>new-page works!</p>
+<h1>{{currentHero.id ? 'Edit' : 'Add'}} hero
+  <small>{{currentHero.superhero}}</small>
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <mat-card-content>
+        <form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Superhero</mat-label>
+            <input type="text" matInput required formControlName="superhero">
+          </mat-form-field>
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Alter ego</mat-label>
+            <input type="text" matInput required formControlName="alter_ego">
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <mat-label>First Appearance</mat-label>
+            <input type="text" matInput required formControlName="first_appearance">
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <mat-label>Characters</mat-label>
+            <input type="text" matInput required formControlName="characters">
+          </mat-form-field>
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Superhero</mat-label>
+            <mat-select required formControlName="publisher">
+              <mat-option *ngFor="let item of publishers" [value]="item.id">{{item.label}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <mat-label>Alternative image</mat-label>
+            <input type="text" matInput formControlName="alt_img">
+          </mat-form-field>
+        </form>
+
+        <div class="flex justify-content-between">
+          <button *ngIf="currentHero.id" mat-flat-button color="warn" (click)="onDelete()">Delete</button>
+          <span class="spacer"></span>
+          <button mat-flat-button color="primary" (click)="onSubmit()">Save</button>
+        </div>
+
+
+      </mat-card-content>
+    </mat-card>
+
+
+  </div>
+  <div class="col-12 sm:col-6">
+    <img [src]="currentHero | heroImage" alt="hero image" matCardImage>
+  </div>
+</div>
