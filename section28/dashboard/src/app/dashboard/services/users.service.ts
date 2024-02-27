@@ -17,7 +17,7 @@ export class UsersService {
   public users = computed(() => this.#state().users)
   public loading = computed(() => this.#state().loading)
 
-  #state = signal<State>(
+  readonly #state = signal<State>(
     {
       loading: true,
       users: []
