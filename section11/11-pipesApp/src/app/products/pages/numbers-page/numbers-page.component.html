@@ -1,0 +1,21 @@
+<p-panel header="Basic Pipes" class="p-1">
+  <p>Pipes numbers - Usually in Common Module</p>
+</p-panel>
+
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="totalSells" [subheader]="totalSells.toString()">
+      {{totalSells | currency: 'EUR':'symbol-narrow':'1.6-6'}}
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="percent" [subheader]="percent.toString()">
+      {{percent | percent:'1.2-2'}}
+    </p-card>
+  </div>
+  <!-- <div class="col-12 md:col-4"> -->
+  <!-- <p-card header="titlecase"> -->
+  <!-- {{nameTitle | titlecase}} -->
+  <!-- </p-card> -->
+  <!-- </div> -->
+</div>

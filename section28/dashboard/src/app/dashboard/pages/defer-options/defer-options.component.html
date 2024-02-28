@@ -1,0 +1,96 @@
+<app-title title="Defer Triggers"></app-title>
+<section>
+  <h1 class="text-xl">
+    <hr class="my-2">
+
+    @defer (on interaction) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      On interaction
+    </app-heavy-loaders-fast>
+    } @placeholder {
+    <div class="w-full h-20 bg-purple-200">Click in div</div>
+    }
+
+  </h1>
+</section>
+
+<section>
+  <h1 class="text-xl">
+    <hr class="my-2">
+
+    <button #btnInteraction class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
+      Click me!
+    </button>
+
+    @defer (on interaction(btnInteraction)) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      On interaction ref click
+    </app-heavy-loaders-fast>
+    } @placeholder {
+    <div class="w-full h-20 bg-purple-200">Click in Button</div>
+    }
+
+  </h1>
+</section>
+
+
+<section>
+  <h1 class="text-xl">
+    <hr class="my-2">
+
+    @defer (on hover) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      On hover
+    </app-heavy-loaders-fast>
+    } @placeholder {
+    <div class="w-full h-20 bg-purple-200">Hover Me!</div>
+    }
+
+  </h1>
+</section>
+
+<section>
+  <h1 class="text-xl">
+    <hr class="my-2">
+
+    @defer (on immediate) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      On inmediate
+    </app-heavy-loaders-fast>
+    } @placeholder {
+    <div class="w-full h-20 bg-purple-200">Loading immediate</div>
+    }
+
+  </h1>
+</section>
+
+<section>
+  <h1 class="text-xl">
+    <hr class="my-2">
+
+    @defer (on timer(2000)) {
+    <app-heavy-loaders-fast cssClass="bg-green-500 h-20">
+      On timer 2000
+    </app-heavy-loaders-fast>
+    } @placeholder {
+    <div class="w-full h-20 bg-purple-200">Loading in 2 seconds</div>
+    }
+
+  </h1>
+</section>
+
+
+<section>
+  <h1 class="text-xl">
+    <hr class="my-2">
+
+    @defer (on hover; prefetch on idle) {
+    <app-heavy-loaders-fast cssClass="bg-green-500 h-20">
+      On hover, idle
+    </app-heavy-loaders-fast>
+    } @placeholder {
+    <div class="w-full h-20 bg-purple-200">Hover</div>
+    }
+
+  </h1>
+</section>
